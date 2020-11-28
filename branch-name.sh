@@ -1,8 +1,11 @@
 #!/bin/bash
-echo -n "Create branch: "
-read str
-converttolowercase=`echo $str | awk '{print tolower($0)}'`
+echo -n "Task name and number: "
+read task
+echo -n "Branch name: "
+read branch
+branch_convert_to_lowercase=`echo $branch | awk '{print tolower($0)}'`
+task_convert_to_uppercase=`echo $task | awk '{print toupper($0)}'`
 IFS=' '
-read -ra arr <<< "$converttolowercase" 
-concatenatedelements=$(IFS=- ; echo "${arr[*]}")
-git checkout -b "$concatenatedelements"
+read -ra arr <<< "$branch_convert_to_lowercase" 
+concatenate_elements=$(IFS=- ; echo "${arr[*]}")
+git checkout -b "$task_convert_to_uppercase-$concatenate_elements"

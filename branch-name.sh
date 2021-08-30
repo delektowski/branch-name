@@ -32,7 +32,7 @@ done
 branch_converted=$OUTPUT
 
 # Output
-branch_convert_to_lowercase=`echo $branch_converted-23 | awk '{print tolower($0)}'`
+branch_convert_to_lowercase=`echo $branch_converted | awk '{print tolower($0)}'`
 task_convert_to_uppercase=`echo $task | awk '{print toupper($0)}'`
 IFS=' '
 read -ra arr <<< "$branch_convert_to_lowercase" 

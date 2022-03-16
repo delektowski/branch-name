@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Collect branch name
-echo -n "Task name and number: "
+echo -n "Branch type: "
 read task
 echo -n "Branch name: "
 read branch
